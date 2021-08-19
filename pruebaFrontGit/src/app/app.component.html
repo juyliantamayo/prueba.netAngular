@@ -1,0 +1,23 @@
+
+<div class="main">
+  <dx-list
+[items]="navigation"
+class="menu"
+[height]=1080
+[width]=200
+selectionMode="single"
+(onSelectionChanged)="this.isDrawerOpen = true"
+itemTemplate="links">
+<div *dxTemplate="let link of 'links'">
+    <a [routerLink]="['/' + link.path]">
+        <div>
+
+            <span>{{ link.text }}</span>
+        </div>
+    </a>
+</div>
+</dx-list>
+<div id="view">
+  <router-outlet></router-outlet>
+</div>
+</div>
